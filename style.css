@@ -1,3 +1,7 @@
+/* 
+* TABELLA DI GIOCO 
+*/
+
 #tabella {
     width: 1000px;
     height: 600px;
@@ -11,7 +15,10 @@
 
 
 
-/* caselle */
+/*
+* CELLE 
+*/
+
 .square {
     /* da rivedere */
     width: calc(100% / 11);
@@ -22,7 +29,16 @@
     cursor: crosshair;
 }
 
-/* al click sulla casella */
-.active {
-    background-color: aqua;
+/*
+* AL CLICK SULLE CELLE
+*/
+
+/* per i numeri pari */
+.pari {
+    background-color: green;
+}
+
+/* per i numeri dispari */
+.dispari {
+    background-color: red;
 }

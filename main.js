@@ -56,8 +56,15 @@ function generateGrid(grid, dimension) {
         cella.addEventListener(
             "click",
             function () {
-                this.classList.toggle("active");
-                // console.log(this);
+                const cellaValue = parseInt(this.innerHTML);
+                // SE E' PARI il valore assegnato alla cella ....
+                if (isEven(cellaValue)) {
+                    this.classList.toggle("pari");
+                }
+                // ALTRIMENTI
+                else {
+                    this.classList.toggle("dispari");
+                }
             }
         )
 
@@ -82,4 +89,15 @@ function randomNumber(min, max) {
     const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
     // ritorna il numero generato
     return randomNumber;
+}
+
+/**
+ * funzione che ci dice se un numero è pari 
+ * @param {int} num numero da verificare
+ * @returns  {boolean|false} ritorna true se è pari | false se è dispari
+ */
+
+function isEven(num) {
+    num = parseInt(num);
+    return num % 2 == 0;
 }
