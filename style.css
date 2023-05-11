@@ -1,3 +1,13 @@
+body {
+    background-color: #4b2152;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* 
 * TABELLA DI GIOCO 
 */
@@ -24,7 +34,12 @@
     width: calc(100% / 11);
     height: calc(100% / 10);
 
-    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid white;
+    color: #fff;
 
     cursor: crosshair;
 }
@@ -35,10 +50,11 @@
 
 /* per i numeri pari */
 .pari {
-    background-color: green;
+    background-color: #086375;
 }
 
 /* per i numeri dispari */
 .dispari {
-    background-color: red;
+    color: #000;
+    background-color: #affc41;
 }
