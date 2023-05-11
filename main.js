@@ -21,6 +21,14 @@ generateGrid(gridEl, dimensionGrid);
 
 function generateGrid(grid, dimension) {
 
+    //  METODO WHITE-LIST
+    const whiteList = [];
+    // ciclo for per aggiungere all'array solo i numeri ammessi
+    for (let i = 0; i < dimension; i++) {
+        // aggiungo i numeri all'array (partendo da 1 a ...)
+        whiteList.push(i + 1);
+    }
+
     // ciclo for per generare n caselle in base alla dimension
     for (let i = 0; i < dimension; i++) {
 
