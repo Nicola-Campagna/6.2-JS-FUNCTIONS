@@ -32,16 +32,32 @@ function generateGrid(grid, dimension) {
     // ciclo for per generare n caselle in base alla dimension
     for (let i = 0; i < dimension; i++) {
 
+        // prendo un indice a caso e li assegno un valore x dalla whiteList
+        const randomIndex = randomNumber(0, whiteList.length - 1);
+        const cellaValue = whiteList[randomIndex];
+
+        // console.log(whiteList);
+
+        // rimuovo il valore assegnato dalla whiteList
+        const valueDelete = whiteList.splice(randomIndex, 1);
+        // console.warn("valore cancellato: " + valueDelete);
+
         // creo un div che sarà la mia casella
         const cella = document.createElement("div");
+
+        // aggiungo il tutto nel DOM
+        cella.append(cellaValue);
+        // console.log("numero cella" + cella);
+
         // aggiungo la classe "square" in css 
-        cella.classList.add("square")
+        cella.classList.add("square");
 
         // cliccando la casella si accende e si spegne al click
         cella.addEventListener(
             "click",
             function () {
                 this.classList.toggle("active");
+                // console.log(this);
             }
         )
 
@@ -50,4 +66,20 @@ function generateGrid(grid, dimension) {
 
     }
 
+}
+
+/**
+ * funzione che genera un numero random tra valore min e valore max
+ * @param {int} min valore minimo
+ * @param {int} max valore massimo
+ * @returns {int} numero random generato 
+ */
+
+function randomNumber(min, max) {
+    min = parseInt(min);
+    max = parseInt(max);
+    // genera un numero random tra min e max
+    const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+    // ritorna il numero generato
+    return randomNumber;
 }
