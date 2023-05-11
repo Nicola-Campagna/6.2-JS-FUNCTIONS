@@ -28,6 +28,15 @@ function generateGrid(grid, dimension) {
         const cella = document.createElement("div");
         // aggiungo la classe "square" in css 
         cella.classList.add("square")
+
+        // cliccando la casella si accende e si spegne al click
+        cella.addEventListener(
+            "click",
+            function () {
+                this.classList.toggle("active");
+            }
+        )
+
         // appendo la casella alla tabella
         grid.append(cella);
 
