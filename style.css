@@ -1,16 +1,20 @@
 #tabella {
-    width: 80vw;
-    height: 80vh;
+    width: 1000px;
+    height: 600px;
 
-    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
 
     margin: auto;
-    padding: 0;
+
 }
+
+
 
 /* caselle */
 .square {
-    width: calc(100% / 10);
+    /* da rivedere */
+    width: calc(100% / 11);
     height: calc(100% / 10);
 
     border: 1px solid black;

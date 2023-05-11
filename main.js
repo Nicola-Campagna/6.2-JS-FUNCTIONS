@@ -1,7 +1,7 @@
 // tabella 
 const gridEl = document.getElementById("tabella");
 // numero caselle di gioco
-const dimensionGrid = 64;
+const dimensionGrid = 100;
 
 // invochiamo la funzione per creare la tabella
 generateGrid(gridEl, dimensionGrid);
@@ -20,11 +20,17 @@ generateGrid(gridEl, dimensionGrid);
 
 
 function generateGrid(grid, dimension) {
-    // creo un div che sarà la mia casella
-    const cella = document.createElement("div");
-    // aggiungo la classe "square" in css 
-    cella.classList.add("square")
-    // appendo la casella alla tabella
-    grid.append(cella);
+
+    // ciclo for per generare n caselle in base alla dimension
+    for (let i = 0; i < dimension; i++) {
+
+        // creo un div che sarà la mia casella
+        const cella = document.createElement("div");
+        // aggiungo la classe "square" in css 
+        cella.classList.add("square")
+        // appendo la casella alla tabella
+        grid.append(cella);
+
+    }
 
 }
