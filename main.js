@@ -1,10 +1,20 @@
-// tabella 
-const gridEl = document.getElementById("tabella");
-// numero caselle di gioco
-const dimensionGrid = 100;
 
-// invochiamo la funzione per creare la tabella
-generateGrid(gridEl, dimensionGrid);
+// bottome per avviare il gioco
+const btnStartGameEl = document.getElementById("start-game");
+// AL CLICK SI CREA LA TABELLA DI GIOCO
+btnStartGameEl.addEventListener(
+    "click",
+    function () {
+        // tabella 
+        const gridEl = document.getElementById("tabella");
+        // numero caselle di gioco
+        const dimensionGrid = 100;
+        // invochiamo la funzione per creare la tabella
+        generateGrid(gridEl, dimensionGrid);
+        // generateGrid(gridEl, dimensionGrid);
+    }
+)
+
 
 
 
@@ -20,7 +30,8 @@ generateGrid(gridEl, dimensionGrid);
 
 
 function generateGrid(grid, dimension) {
-
+    // per svotare la tabella e non crearne una sotto nuova
+    grid.innerHTML = "";
     //  METODO WHITE-LIST
     const whiteList = [];
     // ciclo for per aggiungere all'array solo i numeri ammessi
